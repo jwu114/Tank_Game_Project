@@ -1,3 +1,10 @@
+/**
+ * File: OnePlayerMode.java
+ * 
+ * @author  Jiarui Wu
+ * @version 1.0
+ * @since   2021-11-08
+ */
 
 import javax.swing.Timer;
 
@@ -30,9 +37,9 @@ public class OnePlayerMode extends GameMode implements ComputerBehaviors {
 		this.difficulty = difficulty;
 
 		p = new Player(KeyEvent.VK_UP, KeyEvent.VK_DOWN, KeyEvent.VK_LEFT, KeyEvent.VK_RIGHT, KeyEvent.VK_SHIFT,
-				KeyEvent.KEY_LOCATION_LEFT, MainFrame.frame.getWidth() / 4, MainFrame.frame.getHeight() / 2, 0);
+				KeyEvent.KEY_LOCATION_LEFT, MainClass.frame.getWidth() / 4, MainClass.frame.getHeight() / 2, 0);
 		playerTank = p.getBubble();
-		computer = new Player(MainFrame.frame.getWidth() * 3 / 4, MainFrame.frame.getHeight() / 2, Math.PI);
+		computer = new Player(MainClass.frame.getWidth() * 3 / 4, MainClass.frame.getHeight() / 2, Math.PI);
 		computerTank = computer.getBubble();
 		super.setPlayer1(p);
 		super.setPlayer2(computer);
@@ -156,49 +163,49 @@ public class OnePlayerMode extends GameMode implements ComputerBehaviors {
 				situation = -1;
 			}
 
-			if (computerTank.getX() <= MainFrame.X + 10) {
+			if (computerTank.getX() <= MainClass.X + 10) {
 				if (!computerTank.getFlag()) {
 					// computer tank is close to left boundary (didn't pass through the boundary
 					// just now)
 					situation = 0;
 				}
-			} else if (computerTank.getX() >= MainFrame.X + MainFrame.WIDTH - 10) {
+			} else if (computerTank.getX() >= MainClass.X + MainClass.WIDTH - 10) {
 				if (!computerTank.getFlag()) {
 					// computer tank is close to right boundary (didn't pass through the boundary
 					// just now)
 					situation = 1;
 				}
-			} else if (computerTank.getY() <= MainFrame.Y + 10) {
+			} else if (computerTank.getY() <= MainClass.Y + 10) {
 				if (!computerTank.getFlag()) {
 					// computer tank is close to top boundary (didn't pass through the boundary just
 					// now)
 					situation = 2;
 				}
-			} else if (computerTank.getY() >= MainFrame.Y + MainFrame.HEIGHT - 10) {
+			} else if (computerTank.getY() >= MainClass.Y + MainClass.HEIGHT - 10) {
 				if (!computerTank.getFlag()) {
 					// computer tank is close to bottom boundary (didn't pass through the boundary
 					// just now)
 					situation = 3;
 				}
-			} else if (computerTank.getX() >= MainFrame.X + 10 && computerTank.getX() < MainFrame.WIDTH / 2) {
+			} else if (computerTank.getX() >= MainClass.X + 10 && computerTank.getX() < MainClass.WIDTH / 2) {
 				if (computerTank.getFlag()) {
 					// computer tank is close to left boundary (just passed through the boundary)
 					situation = 4;
 
 				}
-			} else if (computerTank.getX() <= MainFrame.X + MainFrame.WIDTH - 10
-					&& computerTank.getX() > MainFrame.WIDTH / 2) {
+			} else if (computerTank.getX() <= MainClass.X + MainClass.WIDTH - 10
+					&& computerTank.getX() > MainClass.WIDTH / 2) {
 				if (computerTank.getFlag()) {
 					// computer tank is close to right boundary (just passed through the boundary)
 					situation = 5;
 				}
-			} else if (computerTank.getY() >= MainFrame.Y + 10 && computerTank.getY() < MainFrame.HEIGHT / 2) {
+			} else if (computerTank.getY() >= MainClass.Y + 10 && computerTank.getY() < MainClass.HEIGHT / 2) {
 				if (computerTank.getFlag()) {
 					// computer tank is close to top boundary (just passed through the boundary)
 					situation = 6;
 				}
-			} else if (computerTank.getY() <= MainFrame.Y + MainFrame.HEIGHT - 10
-					&& computerTank.getY() > MainFrame.HEIGHT / 2) {
+			} else if (computerTank.getY() <= MainClass.Y + MainClass.HEIGHT - 10
+					&& computerTank.getY() > MainClass.HEIGHT / 2) {
 				if (computerTank.getFlag()) {
 					// computer tank is close to bottom boundary (just passed through the boundary)
 					situation = 7;

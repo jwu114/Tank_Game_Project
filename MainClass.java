@@ -1,11 +1,17 @@
-
+/**
+ * File: MainClass.java
+ * 
+ * @author  Jiarui Wu
+ * @version 1.0
+ * @since   2021-11-08
+ */
 
 import javax.swing.JFrame;
 
 import java.awt.Color;
 
 
-public class MainFrame{
+public class MainClass{
 
 	/**
 	 * @author Jiarui Wu
@@ -19,7 +25,7 @@ public class MainFrame{
 	protected static final int WIDTH = 1000; // width of frame
 	protected static final int HEIGHT = 700; // height of frame without counting the height of title bar
 
-	public MainFrame() {
+	public MainClass() {
 		// Basic settings of the main frame
 		frame = new JFrame("Bubble Tank");
 		frame.setLayout(null);
@@ -39,6 +45,6 @@ public class MainFrame{
 	
 
 	public static void main(String[] args) {
-		new MainFrame();
+		new MainClass();
 	}
 }

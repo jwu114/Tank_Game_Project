@@ -1,3 +1,11 @@
+/**
+ * File: MainPage.java
+ * 
+ * @author  Jiarui Wu
+ * @version 1.0
+ * @since   2021-11-08
+ */
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -71,7 +79,7 @@ public class MainPage implements ActionListener {
 		btnHelp.setAlignmentX(JButton.CENTER_ALIGNMENT);
 		btnHelp.setFont(new Font("", Font.BOLD, 20));
 		btnHelp.addActionListener(this);
-		btnHelp.setBounds(MainFrame.WIDTH - 45, MainFrame.Y + 15, 30, 30); // set the position and size of component in
+		btnHelp.setBounds(MainClass.WIDTH - 45, MainClass.Y + 15, 30, 30); // set the position and size of component in
 																			// the frame
 		// add components in the box container
 		box1.add(title);
@@ -82,10 +90,10 @@ public class MainPage implements ActionListener {
 		box1.add(Box.createVerticalGlue());// add a bunch of blank space
 
 		// add components in the frame
-		MainFrame.frame.add(box1);
-		MainFrame.frame.add(btnHelp);
-		box1.setBounds(MainFrame.X, MainFrame.Y, MainFrame.WIDTH, MainFrame.HEIGHT);
-		MainFrame.frame.revalidate(); // update the frame after adding new components
+		MainClass.frame.add(box1);
+		MainClass.frame.add(btnHelp);
+		box1.setBounds(MainClass.X, MainClass.Y, MainClass.WIDTH, MainClass.HEIGHT);
+		MainClass.frame.revalidate(); // update the frame after adding new components
 	}
 
 	// Creating the Difficulty Selection Page and add it to the frame (detailed code is similar to the previous one)
@@ -160,10 +168,10 @@ public class MainPage implements ActionListener {
 		box2.add(btnBack1);
 		box2.add(Box.createVerticalGlue());
 
-		box2.setBounds(MainFrame.X, MainFrame.Y, MainFrame.WIDTH, MainFrame.HEIGHT);
-		MainFrame.frame.add(box2);
-		MainFrame.frame.repaint();
-		MainFrame.frame.revalidate();
+		box2.setBounds(MainClass.X, MainClass.Y, MainClass.WIDTH, MainClass.HEIGHT);
+		MainClass.frame.add(box2);
+		MainClass.frame.repaint();
+		MainClass.frame.revalidate();
 	}
 
 	// Creating the Help Page and add it to the frame (detailed code is similar to the previous one)
@@ -189,7 +197,7 @@ public class MainPage implements ActionListener {
 		text.setForeground(Color.WHITE);
 		text.setAlignmentX(JButton.CENTER_ALIGNMENT);
 		text.setFont(new Font("", Font.BOLD, 20));
-		text.setBounds(MainFrame.X + 50, MainFrame.Y + 25, MainFrame.WIDTH, MainFrame.HEIGHT - 150);
+		text.setBounds(MainClass.X + 50, MainClass.Y + 25, MainClass.WIDTH, MainClass.HEIGHT - 150);
 
 		btnBack2 = new JButton(" ↩ ");
 		btnBack2.setForeground(Color.WHITE);
@@ -199,57 +207,57 @@ public class MainPage implements ActionListener {
 		btnBack2.setAlignmentX(JButton.CENTER_ALIGNMENT);
 		btnBack2.setFont(new Font("", Font.BOLD, 27)); // change font of button
 		btnBack2.addActionListener(this);
-		btnBack2.setBounds(MainFrame.WIDTH / 2 - 25, MainFrame.HEIGHT - 75, 50, 50);
+		btnBack2.setBounds(MainClass.WIDTH / 2 - 25, MainClass.HEIGHT - 75, 50, 50);
 
 		helpPage.add(text);
 		helpPage.add(btnBack2);
-		helpPage.setBounds(MainFrame.X, MainFrame.Y, MainFrame.WIDTH, MainFrame.HEIGHT);
-		MainFrame.frame.add(helpPage);
-		MainFrame.frame.repaint(); // update the frame after removing components from the ContentPane
-		MainFrame.frame.revalidate(); // update the frame after adding new component to the Content Pane of frame
+		helpPage.setBounds(MainClass.X, MainClass.Y, MainClass.WIDTH, MainClass.HEIGHT);
+		MainClass.frame.add(helpPage);
+		MainClass.frame.repaint(); // update the frame after removing components from the ContentPane
+		MainClass.frame.revalidate(); // update the frame after adding new component to the Content Pane of frame
 	}
 
 	// Listener for buttons (call method to remove components from old page, call
 	// method to add components of new page)
 	public void actionPerformed(ActionEvent ae) {
 		if (ae.getSource() == btnOnePlayer) {
-			MainFrame.frame.remove(box1);
-			MainFrame.frame.remove(btnHelp);
+			MainClass.frame.remove(box1);
+			MainClass.frame.remove(btnHelp);
 			drawDifficultySelectionPage();
 
 		} else if (ae.getSource() == btnTwoPlayer) {
-			MainFrame.frame.remove(box1);
-			MainFrame.frame.remove(btnHelp);
-			new TwoPlayersMode();
+			MainClass.frame.remove(box1);
+			MainClass.frame.remove(btnHelp);
+			new TwoPlayerMode();
 
 		} else if (ae.getSource() == btnHelp) {
-			MainFrame.frame.getContentPane().removeAll();
-			MainFrame.frame.getContentPane().remove(btnHelp);
+			MainClass.frame.getContentPane().removeAll();
+			MainClass.frame.getContentPane().remove(btnHelp);
 			drawHelpPage();
 
 		} else if (ae.getSource() == btnSuperEasy) {
-			MainFrame.frame.remove(box2);
+			MainClass.frame.remove(box2);
 			new OnePlayerMode(OnePlayerMode.SUPEREASY);
 
 		} else if (ae.getSource() == btnEasy) {
-			MainFrame.frame.remove(box2);
+			MainClass.frame.remove(box2);
 			new OnePlayerMode(OnePlayerMode.EASY);
 
 		} else if (ae.getSource() == btnMedium) {
-			MainFrame.frame.remove(box2);
+			MainClass.frame.remove(box2);
 			new OnePlayerMode(OnePlayerMode.MEDIUM);
 
 		} else if (ae.getSource() == btnHard) {
-			MainFrame.frame.remove(box2);
+			MainClass.frame.remove(box2);
 			new OnePlayerMode(OnePlayerMode.HARD);
 		} else if (ae.getSource() == btnSuperHard) {
-			MainFrame.frame.remove(box2);
+			MainClass.frame.remove(box2);
 			new OnePlayerMode(OnePlayerMode.SUPERHARD);
 		} else if (ae.getSource() == btnBack1) {
-			MainFrame.frame.remove(box2);
+			MainClass.frame.remove(box2);
 			drawMainPage();
 		} else if (ae.getSource() == btnBack2) {
-			MainFrame.frame.remove(helpPage);
+			MainClass.frame.remove(helpPage);
 			drawMainPage();
 		}
 	}

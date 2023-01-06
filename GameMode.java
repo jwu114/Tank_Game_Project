@@ -1,3 +1,11 @@
+/**
+ * File: GameMode.java
+ * 
+ * @author  Jiarui Wu
+ * @version 1.0
+ * @since   2021-11-08
+ */
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -44,19 +52,19 @@ public abstract class GameMode {
 
 		// set the position and size
 		score1.setBounds(60, 0, 100, 50);
-		timer.setBounds(MainFrame.WIDTH / 2 - 20, 0, 100, 50);
-		score2.setBounds(MainFrame.WIDTH - 70, 0, 100, 50);
+		timer.setBounds(MainClass.WIDTH / 2 - 20, 0, 100, 50);
+		score2.setBounds(MainClass.WIDTH - 70, 0, 100, 50);
 
 		canvas = new Canvas();
-		canvas.setBounds(MainFrame.X, MainFrame.Y, MainFrame.WIDTH, MainFrame.HEIGHT);
+		canvas.setBounds(MainClass.X, MainClass.Y, MainClass.WIDTH, MainClass.HEIGHT);
 
-		MainFrame.frame.requestFocusInWindow(); // make the window get focus
-		MainFrame.frame.addKeyListener(kh);
-		MainFrame.frame.add(score1);
-		MainFrame.frame.add(timer);
-		MainFrame.frame.add(score2);
-		MainFrame.frame.add(canvas);
-		MainFrame.frame.revalidate();
+		MainClass.frame.requestFocusInWindow(); // make the window get focus
+		MainClass.frame.addKeyListener(kh);
+		MainClass.frame.add(score1);
+		MainClass.frame.add(timer);
+		MainClass.frame.add(score2);
+		MainClass.frame.add(canvas);
+		MainClass.frame.revalidate();
 	}
 
 	// one-player mode and two-player mode have different timers, so methods about timer are abstract methods
@@ -98,12 +106,12 @@ public abstract class GameMode {
 
 	// add the listener
 	public void addKeyListener() {
-		MainFrame.frame.addKeyListener(kh);
+		MainClass.frame.addKeyListener(kh);
 	}
 
 	// remove the listener at the end of one game or when pausing the game (since removeAll() cannot remove keyListeners)
 	public void removeKeyListener() {
-		MainFrame.frame.removeKeyListener(kh);
+		MainClass.frame.removeKeyListener(kh);
 	}
 
 	protected abstract class BubbleTankAnimation implements ActionListener {

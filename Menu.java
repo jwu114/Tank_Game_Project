@@ -1,3 +1,10 @@
+/**
+ * File: Menu.java
+ * 
+ * @author  Jiarui Wu
+ * @version 1.0
+ * @since   2021-11-08
+ */
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -100,34 +107,34 @@ public class Menu implements ActionListener {
 
 		outerPanel.add(panel);
 		outerPanel.setBounds(250, 200, 500, 300);
-		MainFrame.frame.add(outerPanel);
-		MainFrame.frame.validate();
+		MainClass.frame.add(outerPanel);
+		MainClass.frame.validate();
 	}
 
 	public void actionPerformed(ActionEvent ae) {
 		if (ae.getSource() == btnContinue) {
 			// remove the pause menu
-			MainFrame.frame.remove(outerPanel);
+			MainClass.frame.remove(outerPanel);
 			
 			//refresh the frame
-			MainFrame.frame.repaint();
-			MainFrame.frame.revalidate();
+			MainClass.frame.repaint();
+			MainClass.frame.revalidate();
 			
 			// continue the game
-			MainFrame.frame.requestFocusInWindow();
+			MainClass.frame.requestFocusInWindow();
 			gameMode.addKeyListener();
 			gameMode.startTimers();
 		} else if (ae.getSource() == btnQuit) {
 			// remove the game result menu and other components and listeners
-			MainFrame.frame.remove(outerPanel);
-			MainFrame.frame.getContentPane().removeAll();
+			MainClass.frame.remove(outerPanel);
+			MainClass.frame.getContentPane().removeAll();
 			gameMode.removeKeyListener();
 			gameMode.getPlayer1().removeAllListeners();
 			gameMode.getPlayer2().removeAllListeners();
 			
 
 			//refresh the frame
-			MainFrame.frame.repaint();
+			MainClass.frame.repaint();
 			
 			new MainPage(); //go back to the title page
 		}

@@ -1,3 +1,11 @@
+/**
+ * File: BubbleTank.java
+ * 
+ * @author  Jiarui Wu
+ * @version 1.0
+ * @since   2021-11-08
+ */
+
 import java.util.HashSet;
 
 public class BubbleTank {
@@ -57,8 +65,8 @@ public class BubbleTank {
 	public double getNewX() {
 		double newX;
 		newX = x + Math.cos(getNewDegree()) * directionUD * 3;
-		if (newX <= MainFrame.X || newX >= MainFrame.X + MainFrame.WIDTH) {
-			newX = MainFrame.WIDTH / 2 - (x - MainFrame.WIDTH / 2 + ((x - MainFrame.WIDTH / 2 > 0) ? -2 : 2));
+		if (newX <= MainClass.X || newX >= MainClass.X + MainClass.WIDTH) {
+			newX = MainClass.WIDTH / 2 - (x - MainClass.WIDTH / 2 + ((x - MainClass.WIDTH / 2 > 0) ? -2 : 2));
 		} else {
 			newX = x + Math.cos(getNewDegree()) * directionUD * 3;
 		}
@@ -68,8 +76,8 @@ public class BubbleTank {
 	public double getNewY() {
 		double newY;
 		newY = y - Math.sin(getNewDegree()) * directionUD * 3;
-		if (newY <= MainFrame.Y || newY >= MainFrame.Y + MainFrame.HEIGHT) {
-			newY = MainFrame.HEIGHT / 2 - (y - MainFrame.HEIGHT / 2 + ((y - MainFrame.HEIGHT / 2 > 0) ? -2 : 2));
+		if (newY <= MainClass.Y || newY >= MainClass.Y + MainClass.HEIGHT) {
+			newY = MainClass.HEIGHT / 2 - (y - MainClass.HEIGHT / 2 + ((y - MainClass.HEIGHT / 2 > 0) ? -2 : 2));
 		} else {
 			newY = y - Math.sin(getNewDegree()) * directionUD * 3;
 		}
@@ -118,9 +126,9 @@ public class BubbleTank {
 		double newX = getNewX();
 		double newY = getNewY();
 		// if the tank has past through the boundary
-		if (newX <= MainFrame.X + 2 || newX >= MainFrame.X + MainFrame.WIDTH - 2) {
+		if (newX <= MainClass.X + 2 || newX >= MainClass.X + MainClass.WIDTH - 2) {
 			flag = true;
-		} else if (newY <= MainFrame.Y + 2 || newY >= MainFrame.Y + MainFrame.HEIGHT - 2) {
+		} else if (newY <= MainClass.Y + 2 || newY >= MainClass.Y + MainClass.HEIGHT - 2) {
 			flag = true;
 		}
 

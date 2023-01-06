@@ -1,3 +1,10 @@
+/**
+ * File: TowPlayerMode.java
+ * 
+ * @author  Jiarui Wu
+ * @version 1.0
+ * @since   2021-11-08
+ */
 
 import javax.swing.Timer;
 
@@ -5,7 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 
-public class TwoPlayersMode extends GameMode {
+public class TwoPlayerMode extends GameMode {
 	private Player p1;
 	private Player p2;
 	private BubbleTank playerTank1;
@@ -15,11 +22,11 @@ public class TwoPlayersMode extends GameMode {
 	private Timer t2;// timer for repainting bullets
 	private Timer t3;// timer for the game (120 seconds count down)
 
-	public TwoPlayersMode() {
+	public TwoPlayerMode() {
 		p1 = new Player(KeyEvent.VK_UP, KeyEvent.VK_DOWN, KeyEvent.VK_LEFT, KeyEvent.VK_RIGHT, KeyEvent.VK_SHIFT,
-				KeyEvent.KEY_LOCATION_RIGHT, MainFrame.frame.getWidth() / 4, MainFrame.frame.getHeight() / 2, 0);
+				KeyEvent.KEY_LOCATION_RIGHT, MainClass.frame.getWidth() / 4, MainClass.frame.getHeight() / 2, 0);
 		p2 = new Player(KeyEvent.VK_W, KeyEvent.VK_S, KeyEvent.VK_A, KeyEvent.VK_D, KeyEvent.VK_ALT,
-				KeyEvent.KEY_LOCATION_LEFT, MainFrame.frame.getWidth() * 3 / 4, MainFrame.frame.getHeight() / 2,
+				KeyEvent.KEY_LOCATION_LEFT, MainClass.frame.getWidth() * 3 / 4, MainClass.frame.getHeight() / 2,
 				Math.PI);
 		playerTank1 = p1.getBubble();
 		playerTank2 = p2.getBubble();

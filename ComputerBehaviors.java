@@ -1,3 +1,11 @@
+/**
+ * File: ComputerBehaviors.java
+ * 
+ * @author  Jiarui Wu
+ * @version 1.0
+ * @since   2021-11-08
+ */
+
 import java.awt.event.ActionListener;
 
 public interface ComputerBehaviors {

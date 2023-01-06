@@ -1,3 +1,10 @@
+/**
+ * File: Bullet.java
+ * 
+ * @author  Jiarui Wu
+ * @version 1.0
+ * @since   2021-11-08
+ */
 
 public class Bullet {
 	private int radius; // radius of bullet
@@ -43,8 +50,8 @@ public class Bullet {
 		double newX = x + Math.cos(degree); // new x coordinate
 		double newY = y - Math.sin(degree); // new y coordinate
 		// judge whether bullet touches the boundary
-		if (newX - radius >= MainFrame.X && newY - radius >= MainFrame.Y
-				&& newX + radius <= MainFrame.X + MainFrame.WIDTH && newY + radius <= MainFrame.Y + MainFrame.HEIGHT) {
+		if (newX - radius >= MainClass.X && newY - radius >= MainClass.Y
+				&& newX + radius <= MainClass.X + MainClass.WIDTH && newY + radius <= MainClass.Y + MainClass.HEIGHT) {
 			x = newX;
 			y = newY;
 		} else {

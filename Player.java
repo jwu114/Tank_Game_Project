@@ -1,3 +1,11 @@
+/**
+ * File: Player.java
+ * 
+ * @author  Jiarui Wu
+ * @version 1.0
+ * @since   2021-11-08
+ */
+
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -38,10 +46,10 @@ public class Player {
 		this.keyLocationShoot = keyLocationShoot;
 		tank = new BubbleTank(initPositionX, initPositionY, initDegree);
 		score = 0;
-		MainFrame.frame.requestFocusInWindow(); // make the window get focus
-		MainFrame.frame.addKeyListener(kh1);
-		MainFrame.frame.addKeyListener(kh2);
-		MainFrame.frame.addKeyListener(kh3);
+		MainClass.frame.requestFocusInWindow(); // make the window get focus
+		MainClass.frame.addKeyListener(kh1);
+		MainClass.frame.addKeyListener(kh2);
+		MainClass.frame.addKeyListener(kh3);
 	}
 
 	// getters
@@ -134,8 +142,8 @@ public class Player {
 
 	// remove all listener at the end of one game (since removeAll() cannot remove keyListeners)
 	public void removeAllListeners() {
-		MainFrame.frame.removeKeyListener(kh1);
-		MainFrame.frame.removeKeyListener(kh2);
-		MainFrame.frame.removeKeyListener(kh3);
+		MainClass.frame.removeKeyListener(kh1);
+		MainClass.frame.removeKeyListener(kh2);
+		MainClass.frame.removeKeyListener(kh3);
 	}
 }
